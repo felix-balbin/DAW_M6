@@ -123,12 +123,14 @@ function verificarLetra(letraEntrada){
             mostrarParaula[i]=letraEntrada;
             correcta=true;
             vecesAparece++;
+            
         }
     }
 
     if(correcta){
         letrasCorrectasPuestas.push(letraEntrada);
-        puntos=(puntos+encertadaConsecutiva)*vecesAparece;
+        //punts+encerts seguits multiplicat per cuantes vegades surt 
+        puntos+=(1+encertadaConsecutiva)*vecesAparece;
         encertadaConsecutiva++;
         dadesActualizat();            
         
@@ -158,6 +160,7 @@ function ganarPerder(){
         if(!partidaTerminada){
             alert("Perdiste");
             numPartides++;
+            paraulaJoc.classList.add("perdido");
             partidaTerminada=true;
             dadesActualizat();
             document.getElementById("botonNova").disabled=false;
@@ -169,6 +172,7 @@ function ganarPerder(){
             guanyades++;
             numPartides++;
             dadesActualizat();
+            paraulaJoc.classList.add("ganado");
             document.getElementById("botonNova").disabled=false;
             mejorPartidaFinalizada();
         }
@@ -213,6 +217,9 @@ function reiniciar(){
     encertadaConsecutiva=0;
     mostrarParaula=[];
     letrasCorrectasPuestas=[];
+
+    paraulaJoc.classList.remove("ganado","perdido");
+
     dadesActualizat();
     cambiarImagen();
 
