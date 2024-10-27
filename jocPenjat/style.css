@@ -1,4 +1,15 @@
 body{
     text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#botones{
+    margin-top: 5vh;
 }
 
+#paraulaJoc.ganado{
+    background-color: greenyellow;
+}
+
+#paraulaJoc.perdido{
+    background-color: rgb(238, 71, 71);
+}
