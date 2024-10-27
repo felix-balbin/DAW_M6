@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colgado</title>
+</head>
+<body>
+    <h1>Joc del penjat</h1>
+    <input type="password" id="paraulaIntent" placeholder="Posa una paraula">
+    <div onclick="mostrar()">
+        <span id="botonOjo" class="material-icons">visibility</span>
+    </div>
+    
+    <button onclick="comprueba()" id="comienza">Començar partida</button>
+    <button onclick="reiniciar()" id="botonNova">Nova partida</button>
+
+    <div id="paraulaJoc"></div>
+    
+    <p id="intentos">Intents restants: 10</p>
+
+    <p id="puntos">Punts partida acual: 0</p>
+
+    <p id="numPartides">Total partides: 0</p>
+
+    <p id="numGanadas">Total partides guanyades: 0</p>
+
+    <p>Puntuacio máxima:</p>
+    <p id="dataMejorPartida">Data:-- | Hora:-- | Punts:--</p>
+
+    <div id="botones"></div>
+    <img id="colgado" src="./penjat-dibuixos/penjat_0.jpg" width="300" height="268"></img>
+    <script src="joc.js" ></script>
+</body>
+</html>
