@@ -42,7 +42,7 @@ const NUM_PARELLES = 10;
 
 //FUNCIONALITAT
 function mostraInstruccions(){
-    finestra=window.open("instruccions.html","instruccions","width=400,height=400");
+    finestra=window.open("./instruccions.html","instruccions","width=400,height=400");
 }
 
 //MOSTRA PER PANTALLA EL NOM DEL USUARI
@@ -154,7 +154,7 @@ function creaCartas(){
 -
 --
 -
-CREA CARTAS
+GIRAR CARTAS
 -
 -
 -
@@ -256,10 +256,13 @@ function esParoNo(){
 
 
 function carregarDades(){
-    console.log(canalBroadcast)
+    //console.log(canalBroadcast)
+    
+    
     //Envio les dades de la partida actual a index
     canalBroadcast.postMessage({"jugador" : nomJugActual, "punts" : puntos});
-
+    
+    //Si millorPuntuacio existe y te un valor, obtiene ese valor. Si no, lo indica como 0
     const maxPunts = Number(localStorage.getItem("millorPuntuacio") || 0);
     const nomJugador = localStorage.getItem("millorJugador") || "jugador";
 
@@ -274,7 +277,6 @@ function finalPartida(){
     if(parellesTrobades == NUM_PARELLES){
         console.log("Partida finalitzada")
         sessionStorage.removeItem("partidaComencada");
-        //Si millorPuntuacio existe y te un valor, obtiene ese valor. Si no, lo indica como 0
         
         const maxPunts = Number(localStorage.getItem("millorPuntuacio") || 0);
         const nomJugador = localStorage.getItem("millorJugador") || "jugador";
@@ -290,6 +292,10 @@ function finalPartida(){
         dadesMillorJoc.textContent=`JUGADOR: ${localStorage.getItem("millorJugador")} — PUNTS: ${localStorage.getItem("millorPuntuacio")}`;
 
         carregarDades();
+
+        setTimeout(function(){
+            window.location.assign("./partidaFinalitzada.html");
+        }, 3000);
     }
 }
 
@@ -300,3 +306,8 @@ coloreaPagina();
 mostraPuntsActuals();
 carregarDades();
 
+
+//Des-comentar y guardar para reiniciar el registro de mejor puntuacion
+//Volver a comentar una vez hecho
+//localStorage.setItem("millorPuntuacio", puntos);
+//localStorage.setItem("millorJugador", nomJugActual);

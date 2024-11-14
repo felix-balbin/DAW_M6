@@ -4,12 +4,6 @@
 //Javascript es un llenguatje no tipas
 
 
-
-
-//DECLARAR EVENTS
-btnPartida.addEventListener("click",començarPartida);
-btnBorrar.addEventListener("click",borrarPartida);
-
 //DECLARAR VARIANTS I CONSTANTS
 let finestra;
 
@@ -21,6 +15,13 @@ const infoUrlObj=document.getElementById("info-url");
 
 const canalBroadcast = new BroadcastChannel("canal");
 const dadesPartidaAct = document.getElementById("infoPartidaIndex");
+
+
+
+//DECLARAR EVENTS
+btnPartida.addEventListener("click",començarPartida);
+btnBorrar.addEventListener("click",borrarPartida);
+
 
 //FUNCIONALITAT
 
@@ -50,8 +51,11 @@ function començarPartida(){
 }
 
 function borrarPartida(){
+    //Si existe finestra y no ha sido cerrada antes
+    //Especifico !finestra.closed porque si cierras manualmente finestra sigue con un valor y da errores
     if (finestra && !finestra.closed){
         finestra.close();
+        finestra = null;
     }else{
         alert("No hi ha cap finestra");
     }

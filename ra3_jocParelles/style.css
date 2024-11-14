@@ -5,6 +5,9 @@ html{
     background-color:lightgreen;
     font-family: Arial, Helvetica, sans-serif;
 }
+#paginaFinal{
+    background-color: orange;
+}
 body{
     text-align: center;
 }
@@ -42,11 +45,11 @@ CARTAS JUEGO
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: palevioletred;
+    /*background-color: palevioletred;*/
 }
 
 #todas-cartas{
-    background-color: #2980b9;
+    /*background-color: #2980b9;*/
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
