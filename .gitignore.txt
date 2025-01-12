@@ -1,0 +1,3 @@
+dades_client.js
+
+.vscode/

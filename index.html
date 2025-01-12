@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Buscar cançons</title>
+</head>
+<body>
+    <h1>Spotify - Buscar cançons</h1>
+    <input type="text" id="barraBusqueda" placeholder="Escriu el nom de la cançó/artista" />
+    <div class="botons">
+        <button id="botoBusca" disabled>Buscar</button>
+        <button id="botoBorra" disabled>Borrar</button>
+    </div>
+    <p id="info-resultats">Fes una nova búsqueda</p>
+
+    <div id="dades-pantalla">
+        <div id="resultados">
+            <div id="todos-resultados"></div>
+        </div>
+    
+        <div id="info">
+            <div id="info-artista">
+                <p>Informació artista</p>
+            </div>
+            <p id="titol-llista">Llista cançons</p>
+            <div id="top-tracks">
+                <p id="info-cancons">Informació cançons</p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="spotify.js"></script>
+    
+</body>
+</html>
