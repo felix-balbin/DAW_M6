@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punts d'Interès</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="menu-main">
+            <div id="infoPaisCiutat" class="info-pais-container"></div>
+
+            <div id="filtres">
+                <div class="desplegables">
+                    <div class="filtre">
+                        <label>Tipus:</label>
+                        <select id="typeFilter">
+                            <option value="">Tots</option>
+                        </select>
+                    </div>
+        
+                    <div class="filtre">
+                        <label>Ordenació:</label>
+                        <select id="orderFilter">
+                            <option value="asc">Ascendent</option>
+                            <option value="desc">Descendent</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="text" id="nameFilter" placeholder="Filtrar per nom...">
+            </div>
+    
+            <div id="puntsInteresLlista">
+                <p>No hi ha informació per mostrar</p>
+            </div>
+    
+            <div id="dades-baix">
+                <p id="totalCount">Número total: </p>
+                <button id="netejar-llista">Netejar tot</button>
+            </div>
+
+            <div class="dropable">Arrosegar un fitxer CSV aquí per carregar la informació</div>
+
+    
+        </div>
+    
+        <div id="map"></div>
+    
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts/PuntInteres.js"></script>
+    <!-- <script src="scripts/Excel.js"></script> -->
+    <script src="scripts/const.js"></script>
+    <script src="scripts/mapa.js"></script>
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
